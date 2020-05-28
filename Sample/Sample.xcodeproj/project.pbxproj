@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		D0319815247FE50F00C3E5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0319814247FE50F00C3E5E8 /* Assets.xcassets */; };
 		D0319818247FE50F00C3E5E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0319817247FE50F00C3E5E8 /* Preview Assets.xcassets */; };
 		D031981B247FE50F00C3E5E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0319819247FE50F00C3E5E8 /* LaunchScreen.storyboard */; };
+		D0319836247FEB3600C3E5E8 /* AsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = D0319835247FEB3600C3E5E8 /* AsyncImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D0319817247FE50F00C3E5E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D031981A247FE50F00C3E5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D031981C247FE50F00C3E5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0319833247FEB1E00C3E5E8 /* async-image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "async-image"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0319836247FEB3600C3E5E8 /* AsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +44,9 @@
 			isa = PBXGroup;
 			children = (
 				D031980D247FE50E00C3E5E8 /* Sample */,
+				D0319834247FEB3600C3E5E8 /* Frameworks */,
 				D031980C247FE50E00C3E5E8 /* Products */,
+				D0319833247FEB1E00C3E5E8 /* async-image */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +80,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D0319834247FEB3600C3E5E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +103,9 @@
 			dependencies = (
 			);
 			name = Sample;
+			packageProductDependencies = (
+				D0319835247FEB3600C3E5E8 /* AsyncImage */,
+			);
 			productName = Sample;
 			productReference = D031980B247FE50E00C3E5E8 /* Sample.app */;
 			productType = "com.apple.product-type.application";
@@ -340,6 +355,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0319835247FEB3600C3E5E8 /* AsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0319803247FE50E00C3E5E8 /* Project object */;
 }
