@@ -11,7 +11,11 @@ import AsyncImage
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        List {
+            ForEach((1...50), id: \.self) { index in
+                ProfileRow(index: index)
+            }
+        }
     }
 }
 

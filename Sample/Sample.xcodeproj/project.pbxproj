@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0159570249BF39E008612B5 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015956F249BF39E008612B5 /* AvatarImage.swift */; };
+		D0159572249BF3D0008612B5 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0159571249BF3D0008612B5 /* ProfileRow.swift */; };
+		D02565CE249BE50100F9F4B9 /* AsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = D02565CD249BE50100F9F4B9 /* AsyncImage */; };
 		D031980F247FE50E00C3E5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031980E247FE50E00C3E5E8 /* AppDelegate.swift */; };
 		D0319811247FE50E00C3E5E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0319810247FE50E00C3E5E8 /* SceneDelegate.swift */; };
 		D0319813247FE50E00C3E5E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0319812247FE50E00C3E5E8 /* ContentView.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D015956E249BE541008612B5 /* async-image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "async-image"; path = ..; sourceTree = "<group>"; };
+		D015956F249BF39E008612B5 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		D0159571249BF3D0008612B5 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		D031980B247FE50E00C3E5E8 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D031980E247FE50E00C3E5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0319810247FE50E00C3E5E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +31,6 @@
 		D0319817247FE50F00C3E5E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D031981A247FE50F00C3E5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D031981C247FE50F00C3E5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0319833247FEB1E00C3E5E8 /* async-image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "async-image"; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0319836247FEB3600C3E5E8 /* AsyncImage in Frameworks */,
+				D02565CE249BE50100F9F4B9 /* AsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +52,7 @@
 				D031980D247FE50E00C3E5E8 /* Sample */,
 				D0319834247FEB3600C3E5E8 /* Frameworks */,
 				D031980C247FE50E00C3E5E8 /* Products */,
-				D0319833247FEB1E00C3E5E8 /* async-image */,
+				D015956E249BE541008612B5 /* async-image */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +69,8 @@
 			children = (
 				D031980E247FE50E00C3E5E8 /* AppDelegate.swift */,
 				D0319810247FE50E00C3E5E8 /* SceneDelegate.swift */,
+				D015956F249BF39E008612B5 /* AvatarImage.swift */,
+				D0159571249BF3D0008612B5 /* ProfileRow.swift */,
 				D0319812247FE50E00C3E5E8 /* ContentView.swift */,
 				D0319814247FE50F00C3E5E8 /* Assets.xcassets */,
 				D0319819247FE50F00C3E5E8 /* LaunchScreen.storyboard */,
@@ -105,6 +113,7 @@
 			name = Sample;
 			packageProductDependencies = (
 				D0319835247FEB3600C3E5E8 /* AsyncImage */,
+				D02565CD249BE50100F9F4B9 /* AsyncImage */,
 			);
 			productName = Sample;
 			productReference = D031980B247FE50E00C3E5E8 /* Sample.app */;
@@ -134,6 +143,9 @@
 				Base,
 			);
 			mainGroup = D0319802247FE50E00C3E5E8;
+			packageReferences = (
+				D02565CC249BE50100F9F4B9 /* XCRemoteSwiftPackageReference "async-image" */,
+			);
 			productRefGroup = D031980C247FE50E00C3E5E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,8 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0159572249BF3D0008612B5 /* ProfileRow.swift in Sources */,
 				D031980F247FE50E00C3E5E8 /* AppDelegate.swift in Sources */,
 				D0319811247FE50E00C3E5E8 /* SceneDelegate.swift in Sources */,
+				D0159570249BF39E008612B5 /* AvatarImage.swift in Sources */,
 				D0319813247FE50E00C3E5E8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +370,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D02565CC249BE50100F9F4B9 /* XCRemoteSwiftPackageReference "async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/beilmo/async-image.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		D02565CD249BE50100F9F4B9 /* AsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D02565CC249BE50100F9F4B9 /* XCRemoteSwiftPackageReference "async-image" */;
+			productName = AsyncImage;
+		};
 		D0319835247FEB3600C3E5E8 /* AsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AsyncImage;
