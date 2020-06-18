@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AsyncImage",
+        "repositoryURL": "https://github.com/beilmo/async-image.git",
+        "state": {
+          "branch": "master",
+          "revision": "260272da5603bb2859a3c31b946924ef962642c9",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
