@@ -7,17 +7,29 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// A mutable collection you use to store transient url-image pairs.
 public protocol ImageCache {
-    subscript(_ url: URL) -> Image? { get set }
+    subscript(_ url: URL) -> PlatformImage? { get set }
+}
+
+struct ImageCacheKey: EnvironmentKey {
+    public static let defaultValue: ImageCache = TemporaryImageCache()
+}
+
+extension EnvironmentValues {
+    public var imageCache: ImageCache {
+        get { self[ImageCacheKey.self] }
+        set { self[ImageCacheKey.self] = newValue }
+    }
 }
 
 /// Thin abstraction layer on top of NSCache, conforming to `ImageCache`.
 public struct TemporaryImageCache: ImageCache {
-    private let cache = NSCache<NSURL, Image>()
+    private let cache = NSCache<NSURL, PlatformImage>()
 
-    public subscript(_ key: URL) -> Image? {
+    public subscript(_ key: URL) -> PlatformImage? {
         get {
             cache.object(forKey: key as NSURL)
         }

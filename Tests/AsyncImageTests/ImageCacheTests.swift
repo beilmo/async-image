@@ -22,7 +22,7 @@ final class ImageCacheTests: XCTestCase {
 
     func testTempImageStore() {
         let url = URL(string: "file:///test")!
-        let image = Image()
+        let image = PlatformImage()
         sut[url] = image
 
         XCTAssertEqual(sut[url], image)
@@ -30,13 +30,17 @@ final class ImageCacheTests: XCTestCase {
 
     func testTempImageRemoval() {
         let url = URL(string: "file:///test")!
-        let image = Image()
+        let image = PlatformImage()
         sut[url] = image
 
         XCTAssertNotNil(sut[url])
 
         sut[url] = nil
         XCTAssertNil(sut[url])
+    }
+
+    func testImageCacheKey() {
+        XCTAssertNotNil(ImageCacheKey.defaultValue as? TemporaryImageCache)  
     }
 
     static var allTests = [

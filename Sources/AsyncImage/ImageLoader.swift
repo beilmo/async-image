@@ -9,13 +9,9 @@
 import Foundation
 import Combine
 
-fileprivate extension DispatchQueue {
-
-    /// The dispatch queue responsible of image loading processes.
-    static let imageLoadingQueue = DispatchQueue(label: "image-loading")
-}
-
 extension ImageLoader {
+
+    /// Enum representing the actual state of the ImageLoader.
     public enum Status {
         case unknown
         case waiting
@@ -25,11 +21,12 @@ extension ImageLoader {
         case canceled
     }
 }
+
 /// Loads a remote Image asynchronously.
 public class ImageLoader: ObservableObject {
 
     /// The image being managed by the image loader.
-    @Published private(set) public var image: Image?
+    @Published private(set) public var image: PlatformImage?
 
     /// A Boolean value indicating whether the operation is currently executing.
     @Published private(set) public var status = Status.unknown
@@ -69,15 +66,15 @@ public class ImageLoader: ObservableObject {
             return
         }
 
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { Image(data: $0.data) }
+        cancellable = URLSession.shared
+            .dataTaskPublisher(for: url)
+            .map { PlatformImage(data: $0.data) }
+            .receive(on: RunLoop.main)
             .handleEvents(receiveSubscription: { [weak self] in self?.onStart($0) },
                           receiveOutput: { [weak self] in self?.cache($0) },
                           receiveCompletion: { [weak self] in self?.onFinish($0) },
                           receiveCancel: { [weak self] in self?.onCancel() })
             .replaceError(with: nil)
-            .subscribe(on: DispatchQueue.imageLoadingQueue)
-            .receive(on: DispatchQueue.main)
             .assign(to: \.image, on: self)
     }
 
@@ -110,7 +107,7 @@ public class ImageLoader: ObservableObject {
         }
     }
 
-    private func cache(_ image: Image?) {
+    private func cache(_ image: PlatformImage?) {
         image.map { cache?[url] = $0 }
     }
 }
